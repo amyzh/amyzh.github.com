@@ -1,0 +1,9 @@
+﻿url:          http://tzhangminmin.tk
+pygments:     true
+markdown:     rdiscount
+permalink:    /posts/:year-:month-:day-:title.html
+title:        张敏敏
+description:  张敏敏的个人站点,记录心情与知识。
+keywords:     张敏敏
+author:       张敏敏
+github:       http://github.com/amyzh

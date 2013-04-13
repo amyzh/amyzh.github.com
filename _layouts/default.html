@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="张敏敏" />
+  <meta name="description" content="{% if page.tags %}{{ page.tags }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="keywords" content="{% if page.tags %}{% for tag in page.tags %}{{ tag }},{% endfor %}{% endif %}{{ site.keywords }}" />
+  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="icon" type="image/png" href="/img/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/bootstrap/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="/css/bootstrap/bootstrap-responsive.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/pygments/default.css" type="text/css">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <img src="/img/logo.png" alt="张敏敏" title="张敏敏" />
+      <h1>张敏敏</h1>
+      <ul class="nav nav-list t-sidenav">
+			  {% if page.title == "主页Home" %}<li class="active"><a href="/"><i class="icon-home icon-white"></i> 主页Home</a></li>{% else %}<li><a href="/"><i class="icon-home"></i> 主页Home</a></li>{% endif %}
+			  {% if page.title == "文档Archive" %}<li class="active"><a href="/archive.html"><i class="icon-book icon-white"></i> 文档Archive</a></li>{% else %}<li><a href="/archive.html"><i class="icon-book"></i> 文档Archive</a></li>{% endif %}
+			  {% if page.title == "关于About" %}<li class="active"><a href="/about.html"><i class="icon-user icon-white"></i> 关于About</a></li>{% else %}<li><a href="/about.html"><i class="icon-user"></i> 关于About</a></li>{% endif %}
+      </ul>
+    </div><!--/span-->
+    <div class="span9">
+    {{ content }}
+    </div><!--/span-->
+  </div><!--/row-->
+</div>
+<footer>
+	<p>Copyright &copy; <a href="/">张敏敏</a> | Deployed on <a href="http://github.com">Github</a> | Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Layout based on <a href="https://github.com/twitter/bootstrap">Bootstrap</a></p>
+</footer>
+</body>
+</html>

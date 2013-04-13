@@ -1,0 +1,57 @@
+﻿---
+layout:   default
+title:    文档Archive
+keywords: 张敏敏,文档Archive
+description: 张敏敏的文档,或曰日志。
+---
+
+<div class="container-fluid">
+<div class="row-fluid">
+	<div class="span7">
+	  <ul class="unstyled">
+	  {% for post in site.posts %}
+	    {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
+	    {% if year != y %}
+	      {% assign year = y %}
+	      <h3>{{ y }}</h3>
+	    {% endif %}
+	    <li>
+	      <time>{{ post.date | date:"%Y-%m-%d" }}</time>
+	      <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+	      <!-- UYAN COUNT BEGIN -->
+			  <a class="label" href="{{ post.url }}" id="uyan_count_unit">(0)</a>
+	      <!-- UYAN COUNT END -->
+	    </li>
+	  {% endfor %}
+	  </ul>
+	  <!-- UYAN COUNT BEGIN -->
+	  <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1745270"></script>
+	  <!-- UYAN COUNT END -->
+  </div>
+  <div class="span5">
+	  <div id='tc' class="tag_cloud">
+	  	<h2>标签Tags:</h2>
+	  	<hr>
+			{% for tag in site.tags %}
+			<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+			{% endfor %}
+			<hr>
+		</div>
+		<script src="/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script> 
+		<script src="/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script> 
+		<script language="javascript">
+		$.fn.tagcloud.defaults = {
+		    size: {start: 15, end: 30, unit: 'px'},
+		      color: {start: '#65bccd', end: '#ff6347'}
+		};
+		$(function () {
+		    $('#tc a').tagcloud();
+		});
+		</script>
+	</div>
+</div>
+</div>
+
+
+
+

@@ -1,0 +1,21 @@
+﻿---
+layout: default
+---
+
+<h2>{{ page.title }}<h2>
+<span class="label"><i class="icon-time icon-white"></i> {{ page.date | date: "%Y-%m-%d" }}</span>
+{% for tag in page.tags%}<span class="label"><i class="icon-tag icon-white"></i> {{ tag }}</span>{% endfor %}
+{{ content }}
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+    	{% if page.previous %}<a class="btn btn-primary pull-left" href="{{ page.previous.url }}">&laquo;上一篇：{{ page.previous.title }}</a>
+    	{% else %}<a class="btn btn-primary disabled pull-left" href="#">&laquo;上一篇：没有了</a>
+    	{% endif %}
+    	{% if page.next %}<a class="btn btn-primary pull-right" href="{{ page.next.url }}">下一篇：{{ page.next.title }}&raquo;</a>
+    	{% else %}<a class="btn btn-primary disabled pull-right" href="#">下一篇：没有了&raquo;</a>
+    	{% endif %}
+    </div>
+  </div>
+</div>   
+<hr>
